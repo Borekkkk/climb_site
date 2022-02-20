@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+{% if voie_list %}
+    {% for voie in voie_list %}
+        <section>
+            <h1>{{ voie.name }}</h1>
+            <li>{{ voie.description }}</li>
+            <li>URL : {{voie.image.url}}</li>
+            <li>PATH : {{voie.image.path}}</li>
+            <div><img class="fit-picture" src="{{voie.image.url}}"></div>
+            <li>{{ voie.difficulty }}</li>
+        </section>
+    {% endfor %}
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

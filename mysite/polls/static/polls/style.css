@@ -1,0 +1,55 @@
+li a {
+    color: red;
+}
+/*
+Comments
+
+body {
+    background: white url("images/background.JPG") no-repeat;
+}
+*/
+
+h1 {
+    font-size: 28px;
+    color : blue;
+}
+
+p {
+}
+
+header{
+  display: flex;
+  text-align: center;
+  border: solid;
+}
+
+nav {
+    float: left;
+    width: 200px;
+    border: groove;
+}
+
+section {
+    border: groove;
+    border-radius: 10px;
+    margin-left: 220px;
+    margin-right: 200px;
+}
+
+footer {
+    position: relative;
+    padding: 15px 15px;
+    background-color: #5cc7b2;
+    color: rgba(255,255,255,.8);
+    display: block;
+    box-sizing: border-box;
+}
+
+head {
+
+}
+
+.fit-picture {
+    width: 50%;
+    height: 50%;
+}
