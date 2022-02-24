@@ -1,5 +1,9 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<title>Listes des voies</title>
+
+<div><a href="{% url 'polls:index' %}">Page d'acceuil</a></div>
 {% if voie_list %}
     {% for voie in voie_list %}
         <section>

@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<title>Liste des sites</title>
+
+<div><a href="{% url 'polls:index' %}">Page d'acceuil</a></div>
+
+{% if sites_list %}
+    {% for site in sites_list %}
+        <section>
+            <h1>{{ site.name }}</h1>
+            <li><a href="{% url 'polls:secteurs' %}">Lien des secteurs</a></li>
+        </section>
+    {% endfor %}
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
 
-from .models import Question, Choice, Voie
+from .models import Question, Choice, Voie, Site, Secteur
 
 
 class IndexView(generic.ListView):
@@ -31,7 +31,23 @@ class VoieView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Voie.objects.order_by('name')[:5]
+        return Voie.objects.order_by('name')
+
+
+class SiteView(generic.ListView):
+    template_name = 'polls/sites.html'
+    context_object_name = 'sites_list'
+
+    def get_queryset(self):
+        return Site.objects.order_by('name')
+
+
+class SecteurView(generic.ListView):
+    template_name = 'polls/secteurs.html'
+    context_object_name = 'secteurs_list'
+
+    def get_queryset(self):
+        return Secteur.objects.order_by('name')
 
 
 def vote(request, question_id):
